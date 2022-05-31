@@ -290,7 +290,7 @@ Avatar:AddLabel("Fun")
 Avatar:AddButton("Big Head",function()
     local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
     local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
-    wearing.HeadScale = 99999
+    wearing.HeadScale = 99999999
     ConnectionEvent:FireServer(315,wearing,true)
 end)
 
