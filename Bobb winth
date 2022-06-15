@@ -532,6 +532,8 @@ AvatarEditor:AddTextBox("Equip AssetId",function(assetid)
         wearing.Pants = assetid
     elseif assettype == 2 then
         wearing.GraphicTShirt = assetid
+    elseif assettype == 18 then
+        wearing.Face = assetid
     end
     ConnectionEvent:FireServer(315,wearing,true)
 end
