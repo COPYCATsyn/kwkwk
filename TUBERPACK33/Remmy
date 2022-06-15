@@ -21,7 +21,7 @@ local library = loadstring(game:HttpGet("https://pastebin.com/raw/6EEJc0M5",true
 local guiname = "   " .. MarketplaceService:GetProductInfo(game.PlaceId).Name .. "      THIS GUI WAS MADE BY REM"
 
 if Players.LocalPlayer.UserId == 1891204254 then -- little something for me
-    guiname = "   " .. MarketplaceService:GetProductInfo(game.PlaceId).Name .. "      OWNER GUI"
+    guiname = "   " .. MarketplaceService:GetProductInfo(game.PlaceId).Name .. "      NIGGER MENU"
 end
 
 local Window,frame = library:AddWindow(guiname, {
@@ -533,7 +533,7 @@ AvatarEditor:AddTextBox("Equip AssetId",function(assetid)
     elseif assettype == 2 then
         wearing.GraphicTShirt = assetid
     elseif assettype == 18 then
-        wearing.Face = assetid
+        wearing.Faces = assetid
     end
     ConnectionEvent:FireServer(315,wearing,true)
 end
