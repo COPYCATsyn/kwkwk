@@ -306,7 +306,7 @@ Avatar:AddButton("Huge Scales",function()
     local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
     wearing.HeadScale = 99999
     wearing.BodyTypeScale = 99999
-    wearing.DepthScale = 99999
+    wearing.DepthScale = 0
     wearing.HeightScale = 99999
     wearing.ProportionScale = 99999
     wearing.WidthScale = 99999
