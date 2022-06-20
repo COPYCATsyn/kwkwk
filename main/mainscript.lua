@@ -313,6 +313,30 @@ Avatar:AddButton("Huge Scales",function()
     ConnectionEvent:FireServer(315,wearing,true)
 end)
 
+Avatar:AddButton("Huge Scales",function()
+    local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
+    local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
+    wearing.HeadScale = 99999
+    wearing.BodyTypeScale = 99999
+    wearing.DepthScale = 99999
+    wearing.HeightScale = 99999
+    wearing.ProportionScale = 99999
+    wearing.WidthScale = 99999
+    ConnectionEvent:FireServer(315,wearing,true)
+end)
+
+Avatar:AddButton("skinny",function()
+    local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
+    local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
+    wearing.HeadScale = 99999
+    wearing.BodyTypeScale = 99999
+    wearing.DepthScale = 0
+    wearing.HeightScale = 99999
+    wearing.ProportionScale = 99999
+    wearing.WidthScale = 0
+    ConnectionEvent:FireServer(315,wearing,true)
+end)
+
 Avatar:AddButton("Small Scales",function()
     local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
     local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
