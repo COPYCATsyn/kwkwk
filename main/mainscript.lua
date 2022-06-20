@@ -18,7 +18,7 @@ end
 
 local library = loadstring(game:HttpGet("https://pastebin.com/raw/6EEJc0M5",true))() -- https://pastebin.com/raw/SjcYQ23F
 
-local guiname = "   " .. MarketplaceService:GetProductInfo(game.PlaceId).Name .. "      NIGGER MENU"
+local guiname = "   " .. MarketplaceService:GetProductInfo(game.PlaceId).Name .. "      Improved Synolope GUI"
 
 if Players.LocalPlayer.UserId == 1891204254 then -- little something for me
     guiname = "   " .. MarketplaceService:GetProductInfo(game.PlaceId).Name .. "      NIGGER MENU"
@@ -194,14 +194,14 @@ end
 
 Avatar:AddLabel("Load Avatar")
 
-Avatar:AddTextBox("Load Avatar From UserId",function(userid)
+Avatar:AddTextBox("Player ID. ",function(userid)
     if userid and tonumber(userid) and Players:GetHumanoidDescriptionFromUserId(tonumber(userid)) then
         local data = ExtractData(Players:GetHumanoidDescriptionFromUserId(tonumber(userid)))
         ConnectionEvent:FireServer(315,data,true)
     end
 end)
 
-Avatar:AddTextBox("Load Avatar From Username",function(username)
+Avatar:AddTextBox("Player User",function(username)
     if username and Players:GetUserIdFromNameAsync(username) then
         local data = ExtractData(Players:GetHumanoidDescriptionFromUserId(Players:GetUserIdFromNameAsync(username)))
         ConnectionEvent:FireServer(315,data,true)
@@ -254,7 +254,7 @@ local clipbuttons = Avatar:AddHorizontalAlignment()
 
 copytoclip()
 
-clipbuttons:AddButton("Copy Current Avatar",function()
+clipbuttons:AddButton("Copy Your Avatar",function()
     local player = Players.LocalPlayer
     local character = player.Character
     if character and character:FindFirstChild("Humanoid") and character.Humanoid:FindFirstChild("HumanoidDescription") then
@@ -268,7 +268,7 @@ clipbuttons:AddButton("Load Avatar",function()
     end
 end)
 
-clipbuttons:AddButton("Load Hair Combo",function()
+clipbuttons:AddButton("Save Hair",function()
     if avatarclipboard then
         local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
         local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
@@ -285,7 +285,7 @@ clipbuttons:AddButton("Save Avatar",function()
     end
 end)
 
-Avatar:AddLabel("Fun")
+Avatar:AddLabel("Avatar Settings")
 
 Avatar:AddButton("Big Head",function()
     local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
@@ -316,7 +316,7 @@ end)
 Avatar:AddButton("Skinny Scales",function()
     local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
     local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
-    wearing.HeadScale = 0
+    wearing.HeadScale = 99999
     wearing.BodyTypeScale = 99999
     wearing.DepthScale = 0
     wearing.HeightScale = 99999
@@ -347,14 +347,14 @@ Avatar:AddButton("Naked",function()
     ConnectionEvent:FireServer(315,wearing,true)
 end)
 
-Avatar:AddButton("Bypassed Shading",function()
+Avatar:AddButton("Tits",function()
     local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
     local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
     wearing.GraphicTShirt = "6474289441"
     ConnectionEvent:FireServer(315,wearing,true)
 end)
 
-Avatar:AddButton("Trapify",function()
+Avatar:AddButton("18+",function()
     local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
     local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
     wearing.GraphicTShirt = "5737725614"
@@ -364,24 +364,24 @@ Avatar:AddButton("Trapify",function()
     ConnectionEvent:FireServer(315,wearing,true)
 end)
 
-Servers:AddButton("Join Most Populated Server",function()
+Servers:AddButton("Most Populated Server",function()
     local server = getservers()[1]
     joinserver(server.InstanceId)
 end)
 
-Servers:AddButton("Join Least Populated Server",function()
+Servers:AddButton("Least Populated Server",function()
     local servers = getservers()
     local server = servers[#servers]
     joinserver(server.InstanceId)
 end)
 
-Servers:AddButton("Join Random Server",function()
+Servers:AddButton("Random Server",function()
     local servers = getservers()
     local server = servers[math.random(1, #servers)]
     joinserver(server.InstanceId)
 end)
 
-Servers:AddButton("Open Server GUI",function()
+Servers:AddButton("Server GUI",function()
     local serverbrowsermodule = require(game.Players.LocalPlayer.PlayerGui:WaitForChild("ServerBrowserGui"):WaitForChild("ServerBrowserGUI"))
     serverbrowsermodule.Open()
 end)
@@ -438,7 +438,7 @@ Avatar:AddSwitch("Rainbow",function(bool)
     end
 end)
 
-Avatar:AddSwitch("Flashy",function(bool)
+Avatar:AddSwitch("Seizure",function(bool)
     if bool then
         if flashloop then
             flashloop:Disconnect()
@@ -515,7 +515,7 @@ local function AddAccessoryString(str,id)
     return table.concat(ids,",")
 end
 
-AvatarEditor:AddTextBox("Equip AssetId",function(assetid)
+AvatarEditor:AddTextBox("nigga equipper",function(assetid)
     assetid = tonumber(assetid)
     if assetid then
     local info = MarketplaceService:GetProductInfo(assetid)
@@ -545,7 +545,7 @@ AvatarEditor:AddTextBox("Equip AssetId",function(assetid)
     elseif assettype == 2 then
         wearing.GraphicTShirt = assetid
     elseif assettype == 18 then
-        wearing.Faces = assetid
+        wearing.Face = assetid
     end
     ConnectionEvent:FireServer(315,wearing,true)
 end
