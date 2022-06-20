@@ -306,18 +306,6 @@ Avatar:AddButton("Huge Scales",function()
     local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
     wearing.HeadScale = 99999
     wearing.BodyTypeScale = 99999
-    wearing.DepthScale = 0
-    wearing.HeightScale = 99999
-    wearing.ProportionScale = 99999
-    wearing.WidthScale = 99999
-    ConnectionEvent:FireServer(315,wearing,true)
-end)
-
-Avatar:AddButton("Huge Scales",function()
-    local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
-    local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
-    wearing.HeadScale = 99999
-    wearing.BodyTypeScale = 99999
     wearing.DepthScale = 99999
     wearing.HeightScale = 99999
     wearing.ProportionScale = 99999
@@ -325,10 +313,10 @@ Avatar:AddButton("Huge Scales",function()
     ConnectionEvent:FireServer(315,wearing,true)
 end)
 
-Avatar:AddButton("skinny",function()
+Avatar:AddButton("Skinny Scales",function()
     local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
     local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
-    wearing.HeadScale = 99999
+    wearing.HeadScale = 0
     wearing.BodyTypeScale = 99999
     wearing.DepthScale = 0
     wearing.HeightScale = 99999
@@ -362,14 +350,14 @@ end)
 Avatar:AddButton("Bypassed Shading",function()
     local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
     local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
-    wearing.GraphicTShirt = "9196895619"
+    wearing.GraphicTShirt = "6474289441"
     ConnectionEvent:FireServer(315,wearing,true)
 end)
 
 Avatar:AddButton("Trapify",function()
     local data = Connection:InvokeServer(Constants.AE_REQUEST_AE_DATA)
     local wearing = data.PlayerCurrentTemporaryOutfit or data.PlayerCurrentlyWearing
-    wearing.GraphicTShirt = "9196895619"
+    wearing.GraphicTShirt = "5737725614"
     wearing.Pants = "7591261065"
     wearing.Shirt = "0"
     wearing.AccessoryBlob = {}
